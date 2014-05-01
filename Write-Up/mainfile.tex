@@ -1,0 +1,46 @@
+\documentclass[12pt,a4paper]{report}
+
+\usepackage{graphicx}
+\usepackage{ifpdf}
+\ifpdf
+   % put here packages only for the PDF:
+   \DeclareGraphicsExtensions{.pdf,.png,.jpg,.mps}
+   \usepackage{hyperref} 
+%   \graphicspath{{../Figures}}
+   \graphicspath{{../png/}{../Figures/}}
+\else
+   % put here packages only for the DVI:
+\fi
+ 
+% put all the other packages here:
+ 
+\usepackage{amsmath}
+%\usepackage{mathtools}
+%\usepackage{amsfonts}
+%\usepackage{amssymb}
+
+\begin{document}
+ 
+\input{title.tex}
+\input{certificate.tex}
+\input{acknowledgements.tex}
+\input{abstract.tex}
+%\maketitle
+\tableofcontents
+\listoffigures
+\listoftables
+ 
+\input{intro.tex}
+\input{litsurvey.tex}
+\input{design.tex}
+\input{results.tex}
+\input{conclusion.tex}
+ 
+%\appendix
+%\input{./tex/myappendix.tex}
+ 
+%Bibliography:
+\clearpage
+\addcontentsline{toc}{chapter}{Bibliography}
+\input{bibliography.tex} 
+\end{document} 
